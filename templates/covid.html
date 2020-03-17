@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Api-covid19-in</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+<body class="stackedit">
+  <div class="stackedit__html"><h2 id="api-covid19-in"><strong>Api-covid19-in</strong></h2>
+<p>A simple api to track covid19 cases in India. Updated every 30 mins.</p>
+<p><strong>Endpoints</strong></p>
+<p>All requests must be made to the url :<br>
+<a href="http://api-covid19-in.herokuapp.com/">https://api-covid19-in.herokuapp.com/</a></p>
+<p><strong>Total cases in India :</strong></p>
+<pre><code>GET /getdata
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>   {
+      "deaths": "2", 
+      "infected": "99", 
+      "recovered": "13", 
+      "total_cases": "114"
+   }
+</code></pre>
+<p><strong>Get cases by states</strong></p>
+<pre><code>GET /getdata?state={state_name}
+</code></pre>
+<p><strong>Request:</strong></p>
+<pre><code>/getdata?state=Jammu%20and%20Kashmir
+
+/getdata?state=Maharashtra
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>{
+  "results": [
+    {
+      "active": "3", 
+      "deaths": "0", 
+      "recoveries": "0", 
+      "state": "Jammu and Kashmir", 
+      "total": "3"
+    }
+  ]
+}
+</code></pre>
+<p><strong>To retrieve data of All states :</strong></p>
+<pre><code>/getdata?state=all
+</code></pre>
+<p><strong>Get news :</strong></p>
+<p>Returns first page ( nos : 12 ) of <a href="https://www.indiatoday.in/coronavirus-covid-19-outbreak">India Today (covid19 news)</a></p>
+<pre><code>GET  /news
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>{
+  "results": [
+    {
+      "image":  ... , 
+      "news_link":  ..., 
+      "snippet":  ... , 
+      "title": ...
+    }
+    ]
+}
+</code></pre>
+<p><strong>Pretty print:</strong></p>
+<pre><code>/getdata?state=all&amp;pretty=1
+/news?pretty=1
+</code></pre>
+<p><strong>Errors:</strong></p>
+<pre><code>{
+  "error": &lt;error related info&gt;
+}
+</code></pre>
+<p><strong>Data Source</strong></p>
+<p>Api fetches covid19 cases from :<br>
+<a href="https://en.wikipedia.org/wiki/2020_coronavirus_pandemic_in_India">https://en.wikipedia.org/wiki/2020_coronavirus_pandemic_in_India</a><br>
+News from :<br>
+<a href="https://www.indiatoday.in/coronavirus-covid-19-outbreak">India Today (covid19 news)</a></p>
+<p><strong>Credits:</strong></p>
+<ul>
+<li><a href="https://www.indiatoday.in/coronavirus-covid-19-outbreak">India Today (covid19 news)</a></li>
+<li><a href="https://en.wikipedia.org/wiki/2020_coronavirus_pandemic_in_India">Wikipedia</a></li>
+<li><a href="https://www.mohfw.gov.in/">Ministry of Health and Welfare , India</a></li>
+<li><a href="https://stackedit.io/">Stackedit</a></li>
+</ul>
+<p><strong>License :</strong></p>
+<p>The data is available only for research and academic purposes. </p>
+</div>
+</body>
+
+</html>
