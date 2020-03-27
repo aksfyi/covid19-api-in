@@ -18,11 +18,13 @@ async function getdata()
     var mig = js.results[0]["migrated"]
     var psa = js.results[0]["passengers_screened_airport"]
     var tot = js.results[0]["total"]
-    document.getElementsById('covid19-rec').innerHTML = rec
-    document.getElementsById('covid19-act').innerHTML = act
-    document.getElementsById('covid19-mig').innerHTML = mig
-    document.getElementsById('covid19-dea').innerHTML = dea
-    document.getElementsById('covid19-psa').innerHTML = psa
-    document.getElementsById('covid19-tot').innerHTML = tot
+    document.getElementById('covid19-rec').innerHTML = rec
+    document.getElementById('covid19-act').innerHTML = act
+    document.getElementById('covid19-mig').innerHTML = mig
+    document.getElementById('covid19-dea').innerHTML = dea
+    document.getElementById('covid19-psa').innerHTML = psa
+    document.getElementById('covid19-tot').innerHTML = tot
+    
+    // :) 
 
 }
